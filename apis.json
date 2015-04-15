@@ -1,7 +1,7 @@
 {
   "name": "Kin Lane - Certification",
   "description": "This is my default certification API, using it to manage posts in a single API. It is a Stack Network API resource, with supporting docker container for the API.",
-  "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-certification-icon.png",
+  "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-certificate.png",
   "tags": [
     "Application Programming Interface",
     "API",
@@ -15,7 +15,7 @@
     {
       "name": "Certification",
       "description": "A certification API resource.",
-      "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-certification-icon.png",
+      "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-certificate.png",
       "humanURL": "https://kin-lane.github.io/certification/",
       "baseURL": "http://certification.api.kinlane.com",
       "tags": [
@@ -27,11 +27,7 @@
         {
           "type": "swagger",
           "url": "https://kin-lane.github.io/certification/swagger.json"
-        },
-        {
-          "type": "x-postman",
-          "url": "https://kin-lane.github.io/certification/postman.json"
-        }        
+        }     
       ],
       "contact": [
         {
