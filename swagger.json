@@ -188,43 +188,6 @@
         ]
       }
     },
-    "/certification/draft/": {
-      "get": {
-        "summary": "draft certifications",
-        "description": "draft certifications",
-        "operationId": "getDraftCertifications",
-        "parameters": [
-          {
-            "name": "appid",
-            "in": "query",
-            "description": "your appid for accessing the certification",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "appkey",
-            "in": "query",
-            "description": "your appkey for accessing the certification",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "certification response",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/certification"
-              }
-            }
-          }
-        },
-        "tags": [
-          "Certification"
-        ]
-      }
-    },
     "/certification/{certification_id}/": {
       "get": {
         "summary": "Retrieve a certification using its slug",
@@ -559,61 +522,10 @@
         ]
       }
     },
-    "/certification/tags/byweek/": {
-      "get": {
-        "summary": "certification tags by week",
-        "description": "certification tags by week",
-        "operationId": "getCertificationTagsByWeek",
-        "parameters": [
-          {
-            "name": "appid",
-            "in": "query",
-            "description": "your appid for accessing the certification",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "appkey",
-            "in": "query",
-            "description": "your appkey for accessing the certification",
-            "required": true,
-            "type": "string"
-          },        
-          {
-            "name": "week",
-            "in": "query",
-            "description": "the week to retrieve tags by",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "year",
-            "in": "query",
-            "description": "the year to retrieve tags by",
-            "required": false,
-            "type": "string"
-          }          
-        ],
-        "responses": {
-          "200": {
-            "description": "Certification Tag Response",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/certification"
-              }
-            }
-          }
-        },
-        "tags": [
-          "Tags"
-        ]
-      }
-    },
-    "/certification/tags/byweek/{tag}/certification/": {
+    "/certification/tags/{tag}/certification/": {
       "get": {
         "summary": "certification tags by week certifications",
-        "description":  "certification tags by week certifications",
+        "description": "certification tags by week certifications",
         "operationId": "getCertificationTagCCertification",
         "parameters": [
           {
@@ -644,43 +556,6 @@
         },
         "tags": [
           "Tags"
-        ]
-      }
-    },
-    "/certification/byweek/": {
-      "get": {
-        "summary": "certifications by week",
-        "description": "certifications by week",
-        "operationId": "getCertificationsByWeek",
-        "parameters": [
-          {
-            "name": "appid",
-            "in": "query",
-            "description": "your appid for accessing the certification",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "appkey",
-            "in": "query",
-            "description": "your appkey for accessing the certification",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Certification Response",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/certification"
-              }
-            }
-          }
-        },
-        "tags": [
-          "Certification"
         ]
       }
     }
