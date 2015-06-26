@@ -1,5 +1,4 @@
 <?php						
-	
 $route = '/certification/:certification_id/';	
 $app->delete($route, function ($certification_id) use ($app){
 	
@@ -13,6 +12,5 @@ $app->delete($route, function ($certification_id) use ($app){
 	//echo $query . "<br />";
 	mysql_query($query) or die('Query failed: ' . mysql_error());	
 
-	});		
-		
+	});			
 ?>
