@@ -32,6 +32,9 @@ $app->get($route, function ($tag)  use ($app){
 		$curated_id = $Database['News_ID'];		
 				
 		// manipulation zone
+
+		$host = $_SERVER['HTTP_HOST'];
+		$certification_id = prepareIdOut($certification_id,$host);
 		
 		$F = array();
 		$F['certification_id'] = $certification_id;

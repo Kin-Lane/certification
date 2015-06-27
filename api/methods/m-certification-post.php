@@ -42,6 +42,8 @@ $app->post($route, function () use ($app){
 		$certification_id = mysql_insert_id();			
 		}
 
+	$host = $_SERVER['HTTP_HOST'];
+	$certification_id = prepareIdOut($certification_id,$host);
 	$ReturnObject['certification_id'] = $certification_id;
 	
 	$app->response()->header("Content-Type", "application/json");

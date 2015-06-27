@@ -2,6 +2,8 @@
 $route = '/certification/:certification_id/';
 $app->get($route, function ($certification_id)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$certification_id = prepareIdIn($certification_id,$host);
 
 	$ReturnObject = array();
 		
@@ -26,6 +28,8 @@ $app->get($route, function ($certification_id)  use ($app){
 		$curated_id = $Database['News_ID'];		
 				
 		// manipulation zone
+
+		$certification_id = prepareIdOut($certification_id,$host);
 		
 		$F = array();
 		$F['certification_id'] = $certification_id;

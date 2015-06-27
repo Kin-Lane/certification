@@ -2,6 +2,9 @@
 $route = '/certification/:certification_id/tags/:tag/';
 $app->delete($route, function ($certification_id,$tag)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$certification_id = prepareIdIn($certification_id,$host);
+
 	$ReturnObject = array();
 		
  	$request = $app->request(); 
@@ -23,6 +26,8 @@ $app->delete($route, function ($certification_id,$tag)  use ($app){
 			$DeleteQuery = "DELETE FROM certification_tag_pivot where Tag_ID = " . trim($tag_id) . " AND Certification_ID = " . trim($certification_id);
 			$DeleteResult = mysql_query($DeleteQuery) or die('Query failed: ' . mysql_error());
 			}
+
+		$tag_id = prepareIdOut($tag_id,$host);
 
 		$F = array();
 		$F['tag_id'] = $tag_id;

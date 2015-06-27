@@ -2,6 +2,9 @@
 $route = '/certification/:certification_id/';	
 $app->put($route, function ($certification_id) use ($app){
 		
+   $host = $_SERVER['HTTP_HOST'];
+   $certification_id = prepareIdIn($certification_id,$host);
+
 	$ReturnObject = array();
 	
  	$request = $app->request(); 
@@ -38,6 +41,8 @@ $app->put($route, function ($certification_id) use ($app){
 		//echo $query . "<br />";
 		mysql_query($query) or die('Query failed: ' . mysql_error());	
 		}
+
+	$certification_id = prepareIdOut($certification_id,$host);
 
 	$F = array();
 	$F['certification_id'] = $certification_id;

@@ -2,6 +2,9 @@
 $route = '/certification/:certification_id/tags/';
 $app->post($route, function ($Certification_ID)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$certification_id = prepareIdIn($certification_id,$host);
+
 	$ReturnObject = array();
 		
  	$request = $app->request(); 
@@ -26,7 +29,7 @@ $app->post($route, function ($Certification_ID)  use ($app){
 			$Tag_ID = mysql_insert_id();			
 			}
 
-		$CheckTagPivotQuery = "SELECT * FROM certification_tag_pivot where Tag_ID = " . trim($Tag_ID) . " AND Certification_ID = " . trim($Certification_ID);
+		$CheckTagPivotQuery = "SELECT * FROM certification_tag_pivot where Tag_ID = " . $tag_id . " AND Certification_ID = " . trim($certification_id);
 		$CheckTagPivotResult = mysql_query($CheckTagPivotQuery) or die('Query failed: ' . mysql_error());
 		
 		if($CheckTagPivotResult && mysql_num_rows($CheckTagPivotResult))
@@ -35,12 +38,14 @@ $app->post($route, function ($Certification_ID)  use ($app){
 			}
 		else
 			{
-			$query = "INSERT INTO certification_tag_pivot(Tag_ID,Certification_ID) VALUES(" . $Tag_ID . "," . $Certification_ID . "); ";
+			$query = "INSERT INTO certification_tag_pivot(Tag_ID,Certification_ID) VALUES(" . $tag_id . "," . $certification_id . "); ";
 			mysql_query($query) or die('Query failed: ' . mysql_error());					
 			}
 
+		$tag_id = prepareIdOut($tag_id,$host);
+
 		$F = array();
-		$F['tag_id'] = $Tag_ID;
+		$F['tag_id'] = $tag_id;
 		$F['tag'] = $tag;
 		$F['certification_count'] = 0;
 		

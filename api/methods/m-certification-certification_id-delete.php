@@ -2,6 +2,9 @@
 $route = '/certification/:certification_id/';	
 $app->delete($route, function ($certification_id) use ($app){
 	
+	$host = $_SERVER['HTTP_HOST'];
+	$certification_id = prepareIdIn($certification_id,$host);
+
 	$Add = 1;
 	$ReturnObject = array();
 	
