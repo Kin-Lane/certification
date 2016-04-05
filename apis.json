@@ -1,20 +1,20 @@
 [{
-	"name": "Curated API",
-	"description": "As I look through the thousands of tweets, blog posts, and other items I read from across the API space, I curate them as part of my regular research. I put them into each research bucket, and make them availble via each reserch project. You can access via this API, and use in real-time as I curate and manage each week.",
-	"image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-abundance.png",
+	"name": "Certification API",
+	"description": "This is an API I'm pulling together to help me organization groups of questions about API providers, and API consumers, to help certify for specific reasons. I'm looking to certify APIs as minimum viable, and help establish certifications for API design, evangelism, and others. This is an API to help me manage the parts and pieces, and is a work in progress.&nbsp;",
+	"image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-certificate.png",
 	"x-open-ranking": "0",
-	"tags": ["Kin Lane Curated APi"],
+	"tags": ["Kin Lane Certification API"],
 	"created": "2016-04-04",
 	"modified": "2016-04-04",
-	"url": "https://kin-lane.github.io/curated/"
+	"url": "https://kin-lane.github.io/certification/"
 	"specificationVersion": "0.14",
 	"apis": [{
-		"name": "Kin Lane Curated",
-		"description": "<p>As I look through the thousands of tweets, blog posts, and other items I read from across the API space, I curate them as part of my regular research. I put them into each research bucket, and make them availble via each reserch project. You can access via this API, and use in real-time as I curate and manage each week.</p>",
+		"name": "Kin Lane Certification API",
+		"description": "This is my master org.",
 		"image": "http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/kin.png",
-		"humanURL": "https://kin-lane.github.io/curated/",
-		"baseURL": "https://kin-lane.github.io/curated/",
-		"tags": ["Kin Lane Curated APi"],
+		"humanURL": "",
+		"baseURL": "",
+		"tags": ["Kin Lane Certification API"],
 		"properties": [{
 			"type": "x-openapi-spec",
 			"url": "api-commons/openapi-spec.json"
@@ -110,7 +110,7 @@
 	}],
 	"include": [{
 		"name": "Parent",
-		"url": "https://kin-lane.github.io/curated//apis.yaml"
+		"url": "https://kin-lane.github.io/certification//apis.yaml"
 	}],
 	"maintainers": [{
 		"FN": "Kin Lane",
